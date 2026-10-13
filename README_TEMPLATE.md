@@ -10,6 +10,12 @@ Deep Learning (IF25-40401) · Teknik Informatika ITERA · Semester Ganjil 2026/2
 | 2  |Audy Olivya Br Gurusinga              |123140025     |                  |
 | 3  |Jesika Filosovi Br Perangin-angin              |123140044      |                 |
 
+# Deskripsi
+Proyek ini bertujuan membangun model deep learning berbasis CNN untuk mengklasifikasikan citra sampah ke dalam lima kelas: botol plastik, gelas plastik, kertas/kardus, saset kemasan, dan styrofoam.
+
+## Pendekatan
+Model awal menggunakan ResNet-18 pretrained dan akan dievaluasi menggunakan Macro-F1 sebagai metrik utama.
+
 ## Ringkasan Pendekatan
 
 - **Arsitektur / backbone**: (mis. ResNet-50 pretrained ImageNet, CNN from scratch, ...)
