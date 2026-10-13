@@ -1,4 +1,4 @@
-# Studio 2 — Klasifikasi Sampah
+# Studio 2 — Klasifikasi Sampah 17
 
 ## Identitas Kelompok
 - **Nama Kelompok:** Kelompok 17
