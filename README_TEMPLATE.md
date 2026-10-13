@@ -1,4 +1,4 @@
-# Studio 2 — Klasifikasi Sampah · Kelompok 17
+# Studio 2 — Klasifikasi Sampah · nomor kelompok (nama kelompok)
 
 Deep Learning (IF25-40401) · Teknik Informatika ITERA · Semester Ganjil 2026/2027
 
@@ -6,15 +6,10 @@ Deep Learning (IF25-40401) · Teknik Informatika ITERA · Semester Ganjil 2026/2
 
 | No | Nama Lengkap | NIM | Kontribusi utama |
 |----|--------------|-----|------------------|
-| 1  |Widia Salsalina Br Singarimbun|123140035     |                  |
-| 2  |Audy Olivya Br Gurusinga              |123140025     |                  |
-| 3  |Jesika Filosovi Br Perangin-angin              |123140044      |                 |
+| 1  |     |                  |
+| 2  |            |    |                  |
+| 3  |             |     |                 |
 
-# Deskripsi
-Proyek ini bertujuan membangun model deep learning berbasis CNN untuk mengklasifikasikan citra sampah ke dalam lima kelas: botol plastik, gelas plastik, kertas/kardus, saset kemasan, dan styrofoam.
-
-## Pendekatan
-Model awal menggunakan ResNet-18 pretrained dan akan dievaluasi menggunakan Macro-F1 sebagai metrik utama.
 
 ## Ringkasan Pendekatan
 
