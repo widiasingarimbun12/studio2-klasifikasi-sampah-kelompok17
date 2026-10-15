@@ -6,9 +6,9 @@ Deep Learning (IF25-40401) · Teknik Informatika ITERA · Semester Ganjil 2026/2
 
 | No | Nama Lengkap | NIM | Kontribusi utama |
 |----|--------------|-----|------------------|
-| 1  |              |     |                  |
-| 2  |              |     |                  |
-| 3  |              |     |                  |
+| 1  | Widia Salsalina Br Singarimbun             |123140035     |                  |
+| 2  |Audy Olivya Br Gurusinga              |     |123140025                  |
+| 3  |Jesika Filosovi Br Perangin-angin             |     |123140044                  |
 
 ## Ringkasan Pendekatan
 
