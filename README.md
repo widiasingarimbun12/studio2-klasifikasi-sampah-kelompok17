@@ -1,53 +1,66 @@
-# Studio 2 — Klasifikasi Sampah · Kelompok 17
+# Studio Proyek 2 — Klasifikasi Sampah
 
-Deep Learning (IF25-40401) · Teknik Informatika ITERA · Semester Ganjil 2026/2027
+## Deskripsi
+Proyek ini membandingkan tiga arsitektur CNN untuk klasifikasi gambar
+sampah ke dalam lima kelas: botol plastik, gelas plastik, kertas/kardus,
+saset kemasan, dan styrofoam.
 
-## Anggota Kelompok
+Model yang dibandingkan:
+- ResNet-18
+- EfficientNet-B0
+- MobileNetV3-Large
 
-| No | Nama Lengkap | NIM | Kontribusi utama |
-|----|--------------|-----|------------------|
-| 1  |Widia Salsalina Br Singarimbun|123140035     |                  |
-| 2  |Audy Olivya Br Gurusinga              |123140025     |                  |
-| 3  |Jesika Filosovi Br Perangin-angin              |123140044      |                 |
+## Model Final
+EfficientNet-B0 dipilih berdasarkan hasil evaluasi pada data validasi.
 
-# Deskripsi
-Proyek ini bertujuan membangun model deep learning berbasis CNN untuk mengklasifikasikan citra sampah ke dalam lima kelas: botol plastik, gelas plastik, kertas/kardus, saset kemasan, dan styrofoam.
+| Metrik | Hasil |
+|---|---:|
+| Accuracy | 94.92% |
+| Macro-F1 | 94.53% |
+| Ukuran bobot model | 15.60 MB |
+| Jumlah gambar validasi | 413 |
 
-## Pendekatan
-Model awal menggunakan ResNet-18 pretrained dan akan dievaluasi menggunakan Macro-F1 sebagai metrik utama.
+## Perbandingan Model
 
-## Ringkasan Pendekatan
+| Model | Accuracy | Macro-F1 | Ukuran bobot |
+|---|---:|---:|---:|
+| ResNet-18 | 93.46% | 93.20% | 42.71 MB |
+| EfficientNet-B0 | 94.92% | 94.53% | 15.60 MB |
+| MobileNetV3-Large | 94.43% | 94.11% | 16.25 MB |
 
-- **Arsitektur / backbone**: (mis. ResNet-50 pretrained ImageNet, CNN from scratch, ...)
-- **Strategi pelatihan**: (freezing, learning rate, scheduler, epoch, augmentasi, ...)
-- **Data tambahan**: (tidak ada / sebutkan sumber dan jumlahnya)
-- **Ukuran input & preprocessing**:
+Hasil berasal dari evaluasi pada data validasi yang sama. Karena data ini
+juga digunakan untuk pemilihan model, hasil tersebut bukan estimasi
+performa pada test set independen.
 
-## Hasil
+## Struktur Proyek
 
-| Putaran | Commit | Macro-F1 (split validasi lokal) | Macro-F1 (diumumkan asisten) |
-|---------|--------|----------------------------------|------------------------------|
-| Preview 1 (14 Okt) | | | |
-| Preview 2 (21 Okt) | | | |
-| Final (25 Okt)     | | | |
+- `submission/model.py` — definisi arsitektur dan transformasi input.
+- `submission/model.pth` — bobot EfficientNet-B0 terpilih.
+- `evaluate.py` — skrip evaluasi.
+- `train_model.py` — skrip pelatihan baseline.
+- `train_baseline.py` — skrip eksperimen baseline.
+- `train_efficientnet.py` — skrip eksperimen EfficientNet-B0.
+- `train_mobilenet.py` — skrip eksperimen MobileNetV3-Large.
+- `train_augmentasi.py` — skrip eksperimen augmentasi.
+- `requirements.txt` — dependensi Python.
+- `experiments/` — hasil eksperimen dan evaluasi.
 
-Catatan eksperimen singkat (apa yang dicoba, apa yang berhasil/gagal):
+## Menjalankan Evaluasi
 
-## Cara Reproduksi
+Pastikan dataset sudah tersedia secara lokal dan mengikuti struktur
+folder yang diharapkan oleh `evaluate.py`.
 
 ```bash
-pip install -r requirements.txt
-python train.py ...            # perintah melatih model
-python evaluate.py --submission ./submission --data ./my_val
+python evaluate.py --submission submission --data PATH_DATASET_VALIDASI --batch-size 32 --out evaluation_result.json
 ```
 
-## Struktur Repositori
+Ganti `PATH_DATASET_VALIDASI` dengan lokasi folder validasi yang berisi
+lima subfolder kelas.
 
-```
-submission/
-  model.py          # get_model() dan get_transform()
-  model.pth         # state_dict model terbaik
-  requirements.txt  # (opsional) paket tambahan, mis. timm
-evaluate.py         # salinan skrip evaluasi resmi
-...                 # kode/notebook pelatihan kelompok
-```
+## Catatan Dataset
+Dataset tidak disertakan dalam repositori ini. Siapkan dataset secara
+terpisah dan patuhi ketentuan lisensi serta penggunaan dari sumbernya.
+
+## Lingkungan
+Dependensi utama tercantum di `requirements.txt`. Hasil waktu evaluasi
+dapat berbeda bergantung pada perangkat keras dan lingkungan eksekusi.

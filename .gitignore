@@ -1,0 +1,20 @@
+# Dataset dan data mentah
+dataset_mahasiswa/
+data_split/
+train_sources.csv
+
+# Cache Python
+__pycache__/
+*.py[cod]
+
+# Lingkungan lokal
+.venv/
+venv/
+.env
+
+# Notebook dan file sementara
+.ipynb_checkpoints/
+.DS_Store
+
+# Log dan file sementara
+*.log
